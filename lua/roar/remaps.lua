@@ -11,3 +11,8 @@ vim.keymap.set('n', "<leader>j", "<C-w>w<down>", {})
 vim.keymap.set({'n', 'v'}, "<leader>p", "\"+p", {})
 vim.keymap.set({'n', 'v'}, "<leader>P", "\"+P", {})
 
+vim.keymap.set({'n', 'v'}, "<leader>y", "\"+y", {})
+
+vim.keymap.set('n', "vv", "<S-v>", {})
+
+vim.keymap.set('n', "yy", "mz<S-v>y<esc>`z", {})

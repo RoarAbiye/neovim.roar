@@ -17,21 +17,21 @@ local plugins = {
 
 	"shaunsingh/nord.nvim",
 	"j-hui/fidget.nvim",
-  'ryanoasis/vim-devicons',
-  'nvim-tree/nvim-web-devicons',
-  'nvim-tree/nvim-tree.lua',
-  'nvim-lualine/lualine.nvim',
+	"ryanoasis/vim-devicons",
+	"nvim-tree/nvim-web-devicons",
+	"nvim-tree/nvim-tree.lua",
+	"nvim-lualine/lualine.nvim",
 
- 'norcalli/nvim-colorizer.lua',
+	"norcalli/nvim-colorizer.lua",
 	-- 🔍telescope
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.1",
-		dependencies = { "nvim-lua/plenary.nvim", 'nvim-tree/nvim-web-devicons' },
+		dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" },
 	},
 	{
 		"nvim-telescope/telescope-file-browser.nvim",
-		dependencies = {"nvim-lua/plenary.nvim" },
+		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 
 	-- ⚙ LSP
@@ -39,9 +39,22 @@ local plugins = {
 	"williamboman/mason-lspconfig.nvim",
 	"mfussenegger/nvim-dap",
 	"jose-elias-alvarez/null-ls.nvim",
+	"prettier/vim-prettier",
 
 	{ "williamboman/mason.nvim", build = ":MasonUpdate" },
-	"kkharji/lspsaga.nvim",
+
+	{
+		"glepnir/lspsaga.nvim",
+		event = "LspAttach",
+		config = function()
+			require("lspsaga").setup({})
+		end,
+		dependencies = {
+			{ "nvim-tree/nvim-web-devicons" },
+			--Please make sure you install markdown and markdown_inline parser
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
+	},
 
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	"windwp/nvim-ts-autotag",
@@ -59,9 +72,9 @@ local plugins = {
 		dependencies = { "rafamadriz/friendly-snippets" },
 	},
 	"saadparwaiz1/cmp_luasnip",
-  'windwp/nvim-autopairs',
-  'tpope/vim-surround',
-'numToStr/Comment.nvim',
+	"windwp/nvim-autopairs",
+	"tpope/vim-surround",
+	"numToStr/Comment.nvim",
 }
 
 local opts = {}

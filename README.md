@@ -40,7 +40,10 @@ This repository contains my Neovim configuration. It is a work in progress, but 
 
 ## Installation 🔨
 
-To install this configuration, clone the repository and copy the `.config/nvim` directory to your home directory. Then, open Neovim and run the following command:
+# ℹ Requirements
+* **neovim 10 or greater**
+
+Clone the repository and copy the `.config/nvim` directory to your home directory. Then, open Neovim and run the following command:
 
     >> Back your current config by runnign
     >> `mv $HOME/.config/nvim $HOME/.config/nvim.bak`
