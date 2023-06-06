@@ -22,6 +22,7 @@ local plugins = {
 	"nvim-tree/nvim-tree.lua",
 	"nvim-lualine/lualine.nvim",
 
+	"KabbAmine/vCoolor.vim",
 	"norcalli/nvim-colorizer.lua",
 	-- 🔍telescope
 	{
@@ -66,7 +67,16 @@ local plugins = {
 	"hrsh7th/cmp-cmdline",
 	"hrsh7th/nvim-cmp",
 	"onsails/lspkind.nvim",
-
+	{
+		"ahmedkhalf/project.nvim",
+		config = function()
+			require("project_nvim").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	},
 	{
 		"L3MON4D3/LuaSnip",
 		dependencies = { "rafamadriz/friendly-snippets" },
@@ -75,6 +85,7 @@ local plugins = {
 	"windwp/nvim-autopairs",
 	"tpope/vim-surround",
 	"numToStr/Comment.nvim",
+	"tpope/vim-fugitive",
 }
 
 local opts = {}

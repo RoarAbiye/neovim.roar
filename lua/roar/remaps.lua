@@ -1,18 +1,21 @@
-vim.keymap.set('n', ";", ":", {})
-vim.keymap.set('n', ":", ";", {})
+local remap = vim.keymap.set
 
-vim.keymap.set('n', "<leader>h", "<C-w>w<left>", {})
-vim.keymap.set('n', "<leader>l", "<C-w>w<right>", {})
-vim.keymap.set('n', "<leader>k", "<C-w>w<up>", {})
-vim.keymap.set('n', "<leader>j", "<C-w>w<down>", {})
+remap("n", ";", ":", {})
+remap("n", ":", ";", {})
 
--- past from clip board
+remap("n", "<leader>h", "<C-w>w<left>", {})
+remap("n", "<leader>l", "<C-w>w<right>", {})
+remap("n", "<leader>k", "<C-w>w<up>", {})
+remap("n", "<leader>j", "<C-w>w<down>", {})
 
-vim.keymap.set({'n', 'v'}, "<leader>p", "\"+p", {})
-vim.keymap.set({'n', 'v'}, "<leader>P", "\"+P", {})
+-- copy and past form clip board
+remap({ "n", "v" }, "<leader>p", '"+p', {})
+remap({ "n", "v" }, "<leader>P", '"+P', {})
 
-vim.keymap.set({'n', 'v'}, "<leader>y", "\"+y", {})
+remap({ "n", "v" }, "<leader>y", '"+y', {})
 
-vim.keymap.set('n', "vv", "<S-v>", {})
+remap("n", "vv", "<S-v>", {})
 
-vim.keymap.set('n', "yy", "mz<S-v>y<esc>`z", {})
+remap("n", "yy", "mz<S-v>y<esc>`z", {})
+
+remap("n", "<leader>vc", "<cmd>VCoolor<cr>", {})
