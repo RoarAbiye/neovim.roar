@@ -16,19 +16,19 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
 
 	"shaunsingh/nord.nvim",
-	"j-hui/fidget.nvim",
+	{"j-hui/fidget.nvim", tag = "legacy"},
 	"ryanoasis/vim-devicons",
 	"nvim-tree/nvim-web-devicons",
 	"nvim-tree/nvim-tree.lua",
 	"theHamsta/nvim-dap-virtual-text",
-  {'folke/neodev.nvim'},
- {'rcarriga/nvim-dap-ui', dependencies= 'mfussenegger/nvim-dap'},
+	{ "folke/neodev.nvim" },
+	{ "rcarriga/nvim-dap-ui", dependencies = "mfussenegger/nvim-dap" },
 	{
 		"microsoft/vscode-js-debug",
 		lazy = true,
 		build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
 	},
-  { "mxsdev/nvim-dap-vscode-js", dependencies = {"mfussenegger/nvim-dap"}},
+	{ "mxsdev/nvim-dap-vscode-js", dependencies = { "mfussenegger/nvim-dap" } },
 	"nvim-lualine/lualine.nvim",
 
 	"KabbAmine/vCoolor.vim",
@@ -95,6 +95,9 @@ local plugins = {
 	"tpope/vim-surround",
 	"numToStr/Comment.nvim",
 	"tpope/vim-fugitive",
+
+	{ "echasnovski/mini.nvim", version = false },
+  { 'echasnovski/mini.completion', version = false },
 }
 
 local opts = {}

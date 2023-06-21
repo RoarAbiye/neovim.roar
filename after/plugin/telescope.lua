@@ -11,9 +11,9 @@ require("telescope").setup({
 			"--ignore-file",
 			".gitignore",
 		},
-    file_ignore_pattern = {
-      "node_modules"
-    }
+		file_ignore_patterns = {
+			"node_modules",
+		},
 	},
 })
 -- loading project.nvim extension

@@ -7,26 +7,34 @@ vim.opt.termguicolors = true
 
 -- OR setup with some options
 require("nvim-tree").setup({
-  sort_by = "case_sensitive",
-  view = {
-    width = 30,
-  },
-  renderer = {
-    group_empty = true,
-  },
-  filters = {
-    dotfiles = true,
-  },
+	sort_by = "case_sensitive",
+	view = {
+		width = 30,
+		relativenumber = true,
+		number = true,
+		side = "right",
+	},
 
--- to integrete project.nvim
-  sync_root_with_cwd = true,
-  respect_buf_cwd = true,
-  update_focused_file = {
-    enable = true,
-    update_root = true
-  }
+	diagnostics = {
+		enable = true,
+    show_on_dirs = true
+	},
+	renderer = {
+		group_empty = true,
+	},
+	filters = {
+		dotfiles = true,
+	},
+
+	-- to integrete project.nvim
+	sync_root_with_cwd = true,
+	respect_buf_cwd = true,
+	update_focused_file = {
+		enable = true,
+		update_root = true,
+	},
 })
 
 -- mapping
 
-vim.keymap.set('n', '<leader>ex', '<cmd>NvimTreeToggle<cr>')
+vim.keymap.set("n", "<leader>ex", "<cmd>NvimTreeToggle<cr>")

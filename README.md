@@ -55,4 +55,4 @@ This will open the help documentation for Neovim. You can also use the `:h` comm
 
 ## License 📝
 
-😁 This configuration is licensed under the THE BEER-WARE LICENSE (Revision 42) License. See the LICENSE file for more information.
+This configuration is licensed under the THE BEER-WARE LICENSE (Revision 42) License. See the LICENSE file for more information.
