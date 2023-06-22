@@ -16,7 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
 
 	"shaunsingh/nord.nvim",
-	"j-hui/fidget.nvim",
+	{"j-hui/fidget.nvim", tag="legacy"},
 	"ryanoasis/vim-devicons",
 	"nvim-tree/nvim-web-devicons",
 	"nvim-tree/nvim-tree.lua",
