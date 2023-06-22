@@ -1,7 +1,14 @@
 require("mini.indentscope").setup({
-  symbol = "",
+	symbol = "│",
 })
 
+require("mini.jump").setup(
+{
+  mapping = {
+    jump_repeat = [[\]]
+  }
+}
+)
+
 require("mini.animate").setup()
-require("mini.jump").setup()
 require("mini.starter").setup()

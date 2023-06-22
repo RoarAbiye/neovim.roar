@@ -95,9 +95,8 @@ local plugins = {
 	"tpope/vim-surround",
 	"numToStr/Comment.nvim",
 	"tpope/vim-fugitive",
-
+{ "lukas-reineke/indent-blankline.nvim" },
 	{ "echasnovski/mini.nvim", version = false },
-  { 'echasnovski/mini.completion', version = false },
 }
 
 local opts = {}
