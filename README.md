@@ -38,18 +38,19 @@ This repository contains my Neovim configuration. It is a work in progress, but 
     * 🔨 Completion Engine(plugin): `nvim-cmp`
     * 📎 Snippet Engine(plugin): `luasnip`
 
-## Installation 🔨
+## Usage 🔨
 
 # ℹ Requirements
+
 * **neovim 10 or greater**
 
-Clone the repository and copy the `.config/nvim` directory to your home directory. Then, open Neovim and run the following command:
+Clone this repository and copy the `.config/nvim` directory to your home directory. 
+Make sure to back up your current config folder.
 
+    >> Clone this repository.
+    >> git clone https://www.github.com/RoarAbiye/neovim.roar
     >> Back your current config by runnign
     >> `mv $HOME/.config/nvim $HOME/.config/nvim.bak`
-```
-:source $HOME/.config/nvim/init.vim
-```
 
 This will open the help documentation for Neovim. You can also use the `:h` command to search for specific help topics.
 
