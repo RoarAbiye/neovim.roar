@@ -25,12 +25,12 @@ This repository contains my Neovim configuration. It is a work in progress, but 
     -   Nord
 
 -   **LSP**
-    -   😴 Mason
-    -   🛠 Mason-lspconfig
-    -   ⚙️ Rust_analyzer
-    -   💻 Tsserver
+    -   😴 mason
+    -   🛠 mason-lspconfig
+    -   ⚙️  rust_analyzer
+    -   💻 tsserver
 
-> > Refer the neovim guid on how to setup LSP servers. In nevim tpye `:help lsp`
+> > Refer the neovim guide on how to setup LSP servers. In neovim type `:help lsp`
 
 -   **Null LS**
 
@@ -57,6 +57,7 @@ Make sure to back up your current config folder.
     Back your current config by runnign
     #`mv $HOME/.config/nvim $HOME/.config/nvim.bak`
 ```
+
 ## License 📝
 
 This configuration is licensed under the THE BEER-WARE LICENSE (Revision 42) License. See the LICENSE file for more information.

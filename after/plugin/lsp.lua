@@ -4,7 +4,7 @@ require("lspsaga").setup()
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- LSP CONFIGS PER LANGUAGE {{--
-local lsp_servers = { "lua_ls", "rust_analyzer", "tsserver", "html", "emmet_ls" }
+local lsp_servers = { "lua_ls", "rust_analyzer", "tsserver", "html", "emmet_ls", "grammarly", "bashls", "cssls"}
 
 for _, server in ipairs(lsp_servers) do
   require("lspconfig")[server].setup({
