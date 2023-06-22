@@ -1,23 +1,31 @@
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("lspsaga").setup()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- LSP CONFIGS PER LANGUAGE {{--
-local lsp_servers = { "lua_ls", "rust_analyzer", "tsserver" }
+local lsp_servers = { "lua_ls", "rust_analyzer", "tsserver", "html", "emmet_ls" }
 
 for _, server in ipairs(lsp_servers) do
-	require("lspconfig")[server].setup({})
+  require("lspconfig")[server].setup({
+    capabilities = capabilities
+  })
+
 end
+
+
+
+
 
 -- NULL LS {{--
 local null_ls = require("null-ls")
 
 null_ls.setup({
-	sources = {
-		null_ls.builtins.formatting.stylua,
-		null_ls.builtins.diagnostics.eslint,
-		--null_ls.builtins.completion.spell,
-	},
+  sources = {
+    null_ls.builtins.formatting.stylua,
+    null_ls.builtins.diagnostics.eslint,
+    --null_ls.builtins.completion.spell,
+  },
 })
 
 -- vim.keymap.set("n", "gr", "<cmd>Lspsaga rename<cr>", { silent = true, noremap = true })
@@ -31,7 +39,7 @@ null_ls.setup({
 -- vim.keymap.set("n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>", {})
 
 vim.keymap.set("n", "<leader>lf", function()
-	vim.lsp.buf.format()
+  vim.lsp.buf.format()
 end, {})
 
 
@@ -44,7 +52,7 @@ local keymap = vim.keymap.set
 keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
 
 -- Code action
-keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
+keymap({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
 
 -- Rename all occurrences of the hovered word for the entire file
 keymap("n", "gr", "<cmd>Lspsaga rename<CR>")
@@ -60,7 +68,7 @@ keymap("n", "gr", "<cmd>Lspsaga rename ++project<CR>")
 keymap("n", "gp", "<cmd>Lspsaga peek_definition<CR>")
 
 -- Go to definition
-keymap("n","gd", "<cmd>Lspsaga goto_definition<CR>")
+keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
 
 -- Peek type definition
 -- You can edit the file containing the type definition in the floating window
@@ -70,7 +78,7 @@ keymap("n","gd", "<cmd>Lspsaga goto_definition<CR>")
 keymap("n", "gt", "<cmd>Lspsaga peek_type_definition<CR>")
 
 -- Go to type definition
-keymap("n","gt", "<cmd>Lspsaga goto_type_definition<CR>")
+keymap("n", "gt", "<cmd>Lspsaga goto_type_definition<CR>")
 
 
 -- Show line diagnostics
@@ -101,7 +109,7 @@ keymap("n", "]E", function()
 end)
 
 -- Toggle outline
-keymap("n","<leader>o", "<cmd>Lspsaga outline<CR>")
+keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>")
 
 -- Hover Doc
 -- If there is no hover doc,
@@ -123,5 +131,4 @@ keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
 keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
 
 -- Floating terminal
-keymap({"n", "t"}, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
-
+keymap({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
